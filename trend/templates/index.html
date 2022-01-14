@@ -26,7 +26,8 @@
 						<div class="content">
 							<div class="inner">
 								<h1>Golden Cross</h1>
-								<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero quo culpa quis molestias, magni neque!</p>
+								<p>A rising tide lifts all boats</p>
+								
 							</div>
 						</div>
 						<nav>
@@ -47,8 +48,14 @@
 							<article id="intro">
 								<h2 class="major">Intro</h2>
 								<span class="image main"><img src="{% static 'images/pic01.png' %}" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+								<h3>A golden cross is a chart pattern in which a relatively short-term moving average crosses above a long-term moving average.</h3>
+								<p>There are three stages to a golden cross. The first stage requires that a downtrend eventually bottoms out as selling is depleted. In the second stage, the shorter moving average forms a crossover up through the larger moving average to trigger a breakout and confirmation of trend reversal. 
+									The last stage is the continuing uptrend for the follow through to higher prices. The most commonly used moving averages are the 50-period and the 200-period moving average. The period represents a specific time increment. Generally, larger time periods tend to form stronger lasting breakouts. 
+								</p>
+								<span class="image main"><img src="{% static 'images/cross.png' %}" alt="" /></span>
+								<p>Many investors view the Golden Cross as a “holy grail” chart pattern. They consider it one of the most definitive signals of a bull market and, therefore, a strong buy signal.
+									Traders can utilize the Golden Cross to help determine good times to both enter and exit the market. The indicator can also be a tool that traders can use to help them better understand when it makes sense to sell and when it’s better for them to buy and hold.
+								</p>
 							</article>
 							
 
@@ -56,9 +63,33 @@
 							<article id="work">
 								<h2 class="major">Work</h2>
 								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
-							</article>
+								<div class="table-wrapper">
+									<table class="alt">
+										<thead>
+											<tr>
+												<th>Market</th>
+												<th>Signal</th>
+											</tr>
+										</thead>
+										<tbody>
+											{% for x, y in markets %}
+
+											<tr>
+												
+												<td>{{ y }}</td>
+
+												<td>{{ x }}</td>
+												
+											</tr>
+											{% endfor %}
+
+										</tbody>
+									</table>
+								</div>
+								
+
+							
+						
 
 						<!-- About -->
 							<article id="about">
