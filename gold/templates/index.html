@@ -25,7 +25,7 @@
 						</div>
 						<div class="content">
 							<div class="inner">
-								<h1>Golden Cross</h1>
+								<h1>Digital Gold</h1>
 								<p>A rising tide lifts all boats</p>
 								
 							</div>
@@ -33,7 +33,7 @@
 						<nav>
 							<ul>
 								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
+								<li><a href="#signals">Signals</a></li>
 								<li><a href="#about">About</a></li>
 								<li><a href="#contact">Contact</a></li>
 								<!--<li><a href="#elements">Elements</a></li>-->
@@ -48,44 +48,45 @@
 							<article id="intro">
 								<h2 class="major">Intro</h2>
 								<span class="image main"><img src="{% static 'images/pic01.png' %}" alt="" /></span>
-								<h3>A golden cross is a chart pattern in which a relatively short-term moving average crosses above a long-term moving average.</h3>
-								<p>There are three stages to a golden cross. The first stage requires that a downtrend eventually bottoms out as selling is depleted. In the second stage, the shorter moving average forms a crossover up through the larger moving average to trigger a breakout and confirmation of trend reversal. 
-									The last stage is the continuing uptrend for the follow through to higher prices. The most commonly used moving averages are the 50-period and the 200-period moving average. The period represents a specific time increment. Generally, larger time periods tend to form stronger lasting breakouts. 
-								</p>
-								<span class="image main"><img src="{% static 'images/cross.png' %}" alt="" /></span>
-								<p>Many investors view the Golden Cross as a “holy grail” chart pattern. They consider it one of the most definitive signals of a bull market and, therefore, a strong buy signal.
-									Traders can utilize the Golden Cross to help determine good times to both enter and exit the market. The indicator can also be a tool that traders can use to help them better understand when it makes sense to sell and when it’s better for them to buy and hold.
+								<h3>Bitcoin is a decentralized digital currency created in January 2009.</h3>
+								<p> The identity of the person or persons who created the technology is still a mystery. 
+									Bitcoin offers the promise of lower transaction fees than traditional online payment mechanisms do, and unlike government-issued currencies, it is operated by a decentralized authority.
+									Bitcoin is known as a type of cryptocurrency because it uses cryptography to keep it secure. There are no physical bitcoins, only balances kept on a public ledger that everyone has transparent access to (although each record is encrypted). 
+									All Bitcoin transactions are verified by a massive amount of computing power via a process known as "mining." Bitcoin is not issued or backed by any banks or governments, nor is an individual bitcoin valuable as a commodity.
 								</p>
 							</article>
 							
 
 						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Work</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+							<article id="signals">
+								<h2 class="major">BTC/USD Technical Signals</h2>
+								<span class="image main"><img src="{% static 'images/pic02.png' %}" alt="" /></span>
 								<div class="table-wrapper">
 									<table class="alt">
 										<thead>
 											<tr>
-												<th>Market</th>
-												<th>Signal</th>
+												<th><h3>INDICATOR</h3></th>
+												<th><h3>SIGNAL</h3></th>
 											</tr>
 										</thead>
 										<tbody>
-											{% for x, y in markets %}
-
-											<tr>
-												
-												<td>{{ y }}</td>
-
-												<td>{{ x }}</td>
-												
+											{% for value, result, name in context %}
+											{% if value > result %}
+											<tr>																								
+												<td>{{  name|upper }}</td>
+												<td>BUY</td>												
 											</tr>
+											{% else %}
+											<tr>																								
+												<td>{{  name|upper }}</td>
+												<td>SELL</td>												
+											</tr>
+											{% endif %}
 											{% endfor %}
-
 										</tbody>
 									</table>
 								</div>
+							</article>
 								
 
 							
