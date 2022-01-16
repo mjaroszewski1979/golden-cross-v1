@@ -1,6 +1,26 @@
-from django.shortcuts import render
-from .utilities import indis
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
+from django.conf import settings
 
-def cross(request):
-    zipped_list = zip(indis.values, indis.results, indis.names)
-    return render(request, 'index.html', {"context":zipped_list})
+from .utilities import get_data, subscribe
+from .models import Bitcoin
+
+
+def index(request):
+    if request.method == "POST":
+        email = request.POST.get('email')
+        subscribe(email)                  
+        messages.success(request, "Thank you for your email. ") 
+        return redirect('success')
+    get_data()
+    bitcoin = get_object_or_404(Bitcoin, title='btc-usd')
+    return render(request, 'index.html', {'bitcoin': bitcoin})
+
+def success(request):
+    return render(request, 'success.html')
+
+
+
+
+
+

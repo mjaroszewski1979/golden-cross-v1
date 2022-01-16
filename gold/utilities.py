@@ -4,9 +4,93 @@ from pandas_datareader._utils import RemoteDataError
 import datetime
 import talib
 
+import mailchimp_marketing as MailchimpMarketing
+from mailchimp_marketing.api_client import ApiClientError
+
+from django.shortcuts import get_object_or_404
+from django.contrib import messages
+from django.conf import settings
+
+from .models import Bitcoin
 
 
-end_d = datetime.datetime.now()
+def get_data():
+    end_d = datetime.datetime.now()
+    diff = datetime.timedelta(days = 600)
+    start_d = end_d - diff
+    period = 252
+    try:
+        data = pdr.get_data_yahoo('BTC-USD', start=start_d, end=end_d)
+        close = data['Adj Close']
+        high = data['High']
+        low = data['Low']
+        last_close = data['Adj Close'][-1]
+        results = [
+            talib.DEMA(close, period)[-1], 
+            talib.EMA(close, period)[-1],
+            talib.HT_TRENDLINE(close)[-1],
+            talib.KAMA(close, period)[-1],
+            talib.SAR(high, low, acceleration=0.020, maximum=0.2)[-1],
+            talib.SMA(close, period)[-1],
+            talib.TRIMA(close, period)[-1],
+            talib.WMA(close, period)[-1]
+            ]
+        fields = []
+        for result in results:
+            if result > last_close:
+                fields.append('sell')
+            else:
+                fields.append('buy')
+        btc = get_object_or_404(Bitcoin, title='btc-usd')
+        btc.dema = fields[0]
+        btc.ema = fields[1]
+        btc.ht = fields[2]
+        btc.kama = fields[3]
+        btc.sar = fields[4]
+        btc.sma = fields[5]
+        btc.trima = fields[6]
+        btc.wma = fields[7]
+        btc.date_added = datetime.datetime.now()
+        btc.save()
+    except RemoteDataError:
+        print('connection error')
+
+
+api_key = settings.MAILCHIMP_API_KEY
+server = settings.MAILCHIMP_DATA_CENTER
+list_id = settings.MAILCHIMP_EMAIL_LIST_ID
+
+def subscribe(email):
+
+    client = MailchimpMarketing.Client()
+    client.set_config({
+        "api_key": api_key,
+        "server": server,
+    })
+
+    member_info = {
+        "email_address": email,
+        "status": "subscribed",
+    }
+
+    try:
+        response = client.lists.add_list_member(list_id, member_info)
+        print("response: {}".format(response))
+    except ApiClientError as error:
+        print("An exception occurred: {}".format(error.text))
+
+
+    
+
+
+
+
+
+
+
+
+
+'''end_d = datetime.datetime.now()
 diff = datetime.timedelta(days = 600)
 start_d = end_d - diff
 
@@ -55,5 +139,5 @@ class Indis:
         self.names = ['Double Exponential Moving Average', 'Exponential Moving Average','Hilbert Transform - Instantaneous Trendline', 'Kaufman Adaptive Moving Average',
             'MESA Adaptive Moving Average', 'Simple Moving Average', 'Triple Exponential Moving Average', 'Triangular Moving Average', 'Weighted Moving Average']
 
-indis = Indis()
+indis = Indis()'''
 

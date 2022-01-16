@@ -1,6 +1,8 @@
+from unicodedata import name
 from django.urls import path
-from .views import cross
+from gold import views
 
 urlpatterns = [
-    path('', cross, name='cross'),
+    path('', views.index, name='index'),
+    path('success/', views.success, name="success"),
 ]
