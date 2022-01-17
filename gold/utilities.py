@@ -8,8 +8,8 @@ import mailchimp_marketing as MailchimpMarketing
 from mailchimp_marketing.api_client import ApiClientError
 
 from django.shortcuts import get_object_or_404
-from django.contrib import messages
 from django.conf import settings
+from django.utils import timezone
 
 from .models import Bitcoin
 
@@ -50,7 +50,7 @@ def get_data():
         btc.sma = fields[5]
         btc.trima = fields[6]
         btc.wma = fields[7]
-        btc.date_added = datetime.datetime.now()
+        btc.date_added = datetime.datetime.now(tz=timezone.utc)
         btc.save()
     except RemoteDataError:
         print('connection error')
