@@ -19,6 +19,12 @@ def index(request):
 def success(request):
     return render(request, 'success.html')
 
+def page_not_found(response, exception):
+    return render(response, '404.html')
+
+def server_error(response):
+    return render(response, '500.html')
+
 
 
 
