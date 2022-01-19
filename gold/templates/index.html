@@ -10,7 +10,7 @@
 						</div>
 						<div class="content">
 							<div class="inner">
-								<h1>Digital Gold</h1>
+								<h1 class="index-heading">Digital Gold</h1>
 								<p>A rising tide lifts all boats</p>
 								
 							</div>
@@ -34,7 +34,7 @@
 							<article id="intro">
 								<h2 class="major">Intro</h2>
 								<span class="image main"><img src="{% static 'images/pic01.png' %}" alt="" /></span>
-								<h3>Bitcoin is a decentralized digital currency created in January 2009.</h3>
+								<h3 class="intro-heading">Bitcoin is a decentralized digital currency created in January 2009.</h3>
 								<p> The identity of the person or persons who created the technology is still a mystery. 
 									Bitcoin offers the promise of lower transaction fees than traditional online payment mechanisms do, and unlike government-issued currencies, it is operated by a decentralized authority.
 									Bitcoin is known as a type of cryptocurrency because it uses cryptography to keep it secure. There are no physical bitcoins, only balances kept on a public ledger that everyone has transparent access to (although each record is encrypted). 
@@ -45,7 +45,7 @@
 
 						<!-- Work -->
 							<article id="signals">
-								<h2 class="major">BTC/USD Technical Signals</h2>
+								<h2 class="major" id="signals-heading">BTC/USD Technical Signals</h2>
 								<span class="image main"><img src="{% static 'images/pic02.png' %}" alt="" /></span>
 								<div class="table-wrapper">
 									<table class="alt">
@@ -103,7 +103,7 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								<span class="image main"><img src="{% static 'images/pic03.png' %}" alt="" /></span>
-								<h3>Technical Analysis is a research technique to identify trading opportunities in the market based on market participants’ actions.</h3>
+								<h3 class="about-heading">Technical Analysis is a research technique to identify trading opportunities in the market based on market participants’ actions.</h3>
 								<p>The theory behind the validity of technical analysis is the notion that the collective actions – buying and selling – of all the participants in the market accurately reflect all relevant information pertaining to a traded security, 
 									and therefore, continually assign a fair market value to the security. Technical analysis is not only used by technical traders. Many fundamental traders use fundamental analysis to determine whether to buy into a market, but having made that decision, 
 									then use technical analysis to pinpoint good, low-risk buy entry price levels.</p>
@@ -112,7 +112,7 @@
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<p>Subscribe to our CryptoStrategy eNewsletter </p>
+								<p class="subscribe-para">Subscribe to our CryptoStrategy eNewsletter </p>
 								<form method="post" action="{% url 'index' %}">
 									{% csrf_token %}
 									<div class="fields">

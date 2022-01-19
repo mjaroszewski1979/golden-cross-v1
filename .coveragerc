@@ -1,0 +1,12 @@
+[run]
+omit =
+    venv/*
+    static/*
+    cross\__init__.py	    
+    cross\settings.py	
+    gold\__init__.py	
+    gold\admin.py	
+    gold\apps.py	
+    gold\tests.py	
+    gold\migrations\*
+    manage.py
