@@ -15,6 +15,18 @@
 
 --------------------------------------------------
 
+### Code Coverage:
+* Selenium and unit tests combined
+
+```
+coverage run -p manage.py test gold && coverage run -p manage.py test tests_selenium && coverage combine && coverage html
+
+```
+
+<img src="https://github.com/mjaroszewski1979/golden-cross-v1/blob/main/cov_report.png">
+
+------------------------------------------------
+
 ### Docker info:
 * Pull an image from my Docker Hub - click on the icon below
 * Create and start a container 
