@@ -1,5 +1,5 @@
 ## Digital Gold
-### This is a Python application powered by Django and its Object-Relational Mapper to show trading signals based on mathematical algorithm, that indicates it is a good time to buy or sell Bitcoin. After fetching data from Yahoo Finance API and calculating current trend direction using 252 days lookback period - approximately 1 year - the results will be displayed in form of a table. 
+### This Python application is built with Django and its Object-Relational Mapper to display trading signals based on a mathematical algorithm that determines the ideal time to buy or sell Bitcoin. By fetching data from the Yahoo Finance API and calculating the current trend direction using a 252-day lookback period (approximately one year), the results are presented in a user-friendly table format.
 
 --------------------------------------------------
 
