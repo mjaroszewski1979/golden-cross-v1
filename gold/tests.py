@@ -119,8 +119,14 @@ class GoldTest(TestCase):
             date_added = time_now
         )
         btc_obj.save()
+
+        # Retrieve all Bitcoin objects
         bitcoins = Bitcoin.objects.all()
+
+        # Print representation of the Bitcoin object
         btc_obj_print = str(Bitcoin.objects.get(title=btc_obj.title))
+
+        # Assertions to verify the model properties and database count
         self.assertIsNotNone(btc_obj)
         self.assertEquals(bitcoins.count(), 2)
         self.assertEquals(btc_obj.dema, 5000)
