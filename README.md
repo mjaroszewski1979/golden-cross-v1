@@ -4,7 +4,6 @@
 
 #### Once the calculations are complete, the results are presented in a user-friendly table format. This application is ideal for traders who are looking to make data-driven decisions when it comes to buying or selling Bitcoin. With the help of the algorithm, the application can analyze large amounts of data and provide recommendations on when to make a move. Additionally, the user-friendly table format makes it easy for traders to understand the data and take appropriate actions.
 
---------------------------------------------------
 
 ### Features:
 
@@ -13,7 +12,6 @@
 * User-Friendly Interface: Displays results in a table format for easy interpretation.
 * Email Notifications: Integrates with MailChimp for subscription and email alerts.
 
---------------------------------------------------
 
 ### Installation
 
