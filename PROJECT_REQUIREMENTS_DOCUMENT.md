@@ -2,7 +2,7 @@
 
 Requirement | Condition | Expected Outcome | Test Case
 ----------- | --------- | ---------------- | ---------
-The get_score function must handle cases where the input data is empty or invalid. | When the input data is an empty dictionary ({}). | The function should return the string "Error". | test_get_score_error
-The get_score function must compare the scores of labels within the provided data. | When LABEL_0 has a higher score than LABEL_1 in the input data. | The function should return False. | test_get_score_label0_gt_label1
-The get_score function must compare the scores of labels within the provided data. | When LABEL_0 has a lower score than LABEL_1 in the input data. | The function should return True. | test_get_score_label0_gt_label1 | test_get_score_label0_lt_label1
+The application must correctly resolve the URL for the index view. | When the reverse('index') function is called. | The resolved URL should map to the index view function. | test_index_url_is_resolved
+The application must correctly resolve the URL for the success view. | When the reverse('success') function is called. | The resolved URL should map to the success view function. | test_success_url_is_resolved
+The index view must handle GET requests correctly. | When a GET request is made to the index URL. | The response should have a status code of 200, use the index.html template, and include a non-null bitcoin context variable. The response must contain the text 'Digital Gold | Home'. | test_index_get
 
