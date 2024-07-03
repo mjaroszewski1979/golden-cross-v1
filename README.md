@@ -5,7 +5,7 @@
 #### Once the calculations are complete, the results are presented in a user-friendly table format. This application is ideal for traders who are looking to make data-driven decisions when it comes to buying or selling Bitcoin. With the help of the algorithm, the application can analyze large amounts of data and provide recommendations on when to make a move. Additionally, the user-friendly table format makes it easy for traders to understand the data and take appropriate actions.
 
 
-### Features:
+### Features
 
 * Data Fetching: Retrieves financial data from Yahoo Finance API.
 * Algorithmic Analysis: Analyzes data to determine buy/sell signals.
@@ -62,7 +62,7 @@ View Trading Signals: The application will display trading signals based on the 
    coverage html
    ```
 
-### Code Coverage:
+### Code Coverage
 * Selenium and unit tests combined
 
 ```
@@ -73,7 +73,7 @@ coverage run -p manage.py test gold && coverage run -p manage.py test tests_sele
 <img src="https://github.com/mjaroszewski1979/golden-cross-v1/blob/main/cov_report.png">
 
 
-### Docker info:
+### Docker Info
 * Pull an image from my Docker Hub - click on the icon below
 * Create and start a container 
 * Pass environment variables to your container
