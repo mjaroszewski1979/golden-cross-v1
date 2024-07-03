@@ -22,7 +22,35 @@
   git clone https://github.com/mjaroszewski1979/golden-cross-v1.git
   cd golden-cross-v1
   ```
-  
+2. Create a virtual environment:
+  ```bash
+  python3 -m venv env
+  source env/bin/activate
+  ```
+3. Install dependencies:
+  ```bash
+  pip install -r requirements.txt
+  ```
+4. Set up environment variables:
+   Create a .env file and add your API keys and other configurations:
+  ```
+  MAILCHIMP_API_KEY=<your-api-key>
+  MAILCHIMP_DATA_CENTER=<data-center>
+  MAILCHIMP_EMAIL_LIST_ID=<email-list-id>
+  ```
+5. Apply migrations and start the server:
+  ```bash
+  python manage.py migrate
+  python manage.py runserver
+  ```
+
+--------------------------------------------------
+
+### Usage
+Access the application: Open your browser and go to http://127.0.0.1:8000/.
+View Trading Signals: The application will display trading signals based on the fetched data.
+
+--------------------------------------------------
 
 
 
