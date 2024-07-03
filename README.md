@@ -42,15 +42,25 @@
   python manage.py runserver
   ```
 
---------------------------------------------------
-
 ### Usage
 Access the application: Open your browser and go to http://127.0.0.1:8000/.
 View Trading Signals: The application will display trading signals based on the fetched data.
 
---------------------------------------------------
+### Testing
 
-
+1. Run unit tests:
+   ```bash
+   python manage.py test
+   ```
+2. Run Selenium tests:
+   ```bash
+   coverage run -p manage.py test tests_selenium
+   ```
+3. Run unit tests:
+   ```bash
+   coverage combine
+   coverage html
+   ```
 
 ### Code Coverage:
 * Selenium and unit tests combined
@@ -62,7 +72,6 @@ coverage run -p manage.py test gold && coverage run -p manage.py test tests_sele
 
 <img src="https://github.com/mjaroszewski1979/golden-cross-v1/blob/main/cov_report.png">
 
-------------------------------------------------
 
 ### Docker info:
 * Pull an image from my Docker Hub - click on the icon below
@@ -79,7 +88,22 @@ docker run -p 8000:8000 --env-file .env <imagename>
 
 ```
 
---------------------------------------------------
+### Technologies Used
+* Django: Web framework for building the application.
+* Selenium: For automated browser testing.
+* Yahoo Finance API: For fetching financial data.
+* MailChimp API: For email notifications.
+* Docker: Containerization of the application.
+
+### Contributing
+* Fork the repository.
+* Create a new branch (git checkout -b feature-branch).
+* Make your changes and commit them (git commit -m 'Add new feature').
+* Push to the branch (git push origin feature-branch).
+* Open a pull request.
+
+### Contact
+For questions or feedback, please contact [mjaroszewski1979.](https://github.com/mjaroszewski1979)
 
 
 ![caption](https://github.com/mjaroszewski1979/golden-cross-v1/blob/main/dg_mockup.png)
