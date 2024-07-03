@@ -21,4 +21,9 @@ The index page must display the correct heading. | When the index page is access
 The intro link must navigate to the correct section. | When the intro link is clicked. | The intro heading should contain "BITCOIN IS A DECENTRALIZED". | is_intro_link_works
 The intro section must close and return to the index heading when the close button is clicked. | When the intro close button is clicked. | The heading should revert to "DIGITAL GOLD". | is_intro_close_button_works
 The signals link must navigate to the correct section. | When the signals link is clicked. | The signals heading should contain "BTC/USD TECHNICAL SIGNALS". | is_signals_link_works
+The signals section must close and return to the index heading when the close button is clicked. | When the signals close button is clicked. | The heading should revert to "DIGITAL GOLD". | is_signals_close_button_works
+The about link must navigate to the correct section. | When the about link is clicked. | The about heading should contain "TECHNICAL ANALYSIS IS A RESEARCH". | is_about_link_works
+The about section must close and return to the index heading when the close button is clicked. | When the about close button is clicked. | The heading should revert to "DIGITAL GOLD". | is_about_close_button_works
+The contact link must navigate to the correct section. | When the contact link is clicked. | The subscribe paragraph should contain "Subscribe to our CryptoStrategy eNewsletter". | is_contact_link_works
+The subscribe form must accept email input and display a success message upon submission. | When an email is entered and the form is submitted. | The success message should contain "Thank you for your email." | is_subscribe_form_works
 
