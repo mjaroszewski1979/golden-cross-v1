@@ -105,6 +105,8 @@ docker run -p 8000:8000 --env-file .env <imagename>
 ### Contact
 For questions or feedback, please contact [mjaroszewski1979.](https://github.com/mjaroszewski1979)
 
+-------------------------------------------
+
 
 ![caption](https://github.com/mjaroszewski1979/golden-cross-v1/blob/main/dg_mockup.png)
   
