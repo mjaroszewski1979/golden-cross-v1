@@ -1,6 +1,11 @@
+# Django imports
 from django.db import models
 
 class Bitcoin(models.Model):
+    """
+    Model representing Bitcoin technical indicators.
+    """
+    
     title = models.CharField(max_length=50,)
     dema = models.CharField(max_length=50, default='n/a')
     ema = models.CharField(max_length=50, default='n/a')
@@ -13,4 +18,9 @@ class Bitcoin(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
+         """
+        Return the string representation of the Bitcoin model.
+        This method is used to display the title of the Bitcoin instance.
+        """
+        
         return self.title
