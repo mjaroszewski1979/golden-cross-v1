@@ -17,4 +17,8 @@ The Bitcoin model must correctly persist and retrieve data from the database. | 
 Requirement | Condition | Expected Outcome | Test Case
 ----------- | --------- | ---------------- | ---------
 The homepage must have the title "Digital Gold Home". | When the index page is accessed. | The title should contain "Digital Gold Home". | is_title_matches
+The index page must display the correct heading. | When the index page is accessed. | The heading should contain "DIGITAL GOLD". | is_index_heading_displayed_correctly
+The intro link must navigate to the correct section. | When the intro link is clicked. | The intro heading should contain "BITCOIN IS A DECENTRALIZED". | is_intro_link_works
+The intro section must close and return to the index heading when the close button is clicked. | When the intro close button is clicked. | The heading should revert to "DIGITAL GOLD". | is_intro_close_button_works
+The signals link must navigate to the correct section. | When the signals link is clicked. | The signals heading should contain "BTC/USD TECHNICAL SIGNALS". | is_signals_link_works
 
