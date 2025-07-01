@@ -15,7 +15,7 @@ class Bitcoin(models.Model):
     sma = models.CharField(max_length=50, default='n/a')
     trima = models.CharField(max_length=50, default='n/a')
     wma = models.CharField(max_length=50, default='n/a')
-    date_added = models.DateTimeField(auto_now_add=True)
+    date_added = models.DateTimeField()
 
     def __str__(self):
          """
